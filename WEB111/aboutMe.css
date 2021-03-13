@@ -1,0 +1,95 @@
+body {
+    background-color: #FF9900;
+}
+
+h1 {
+    text-shadow: 2px 2px 2px #000000;
+    font-size: 2.2em;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    color: rgb(34, 68, 11);
+}
+
+.nav {
+    margin-top: -.48em;
+    margin-left: -1em;
+    margin-right: -.5em;
+    background-color: #0a3ca0;
+    overflow: hidden;
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    float: left;
+}
+
+.nav a, a:visited {
+    color: #d6d5c8;
+    font-family: sans-serif;
+    text-decoration: none;
+    float: left;
+    text-align: center;
+    font-size: 17px;
+    padding: 10px 15px 9px 15px !important;
+}
+
+.nav a:hover {
+    background-color: #517ad3;
+}
+
+.portrait img {
+    float: left;
+    border-radius: 20%;
+    border: 5px solid rgb(209, 108, 26);
+    margin-right: 15px;
+}
+
+.aboutMe {
+    font-family: sans-serif;
+    color: #097054;
+    font-size: 1.15em;
+    width: 50%;
+    float: left;
+    text-align: center;
+    padding: 8px;
+    border: 2px outset rgb(170, 104, 5);
+    margin-left: 3%;
+    margin-top: .75em;
+}
+
+
+.footer {
+    border-top: 1px dashed rgb(143, 153, 3);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+
+}
+
+.footer a, .footer a:visited {
+    background-color: rgb(193, 194, 182);
+    border: 2px outset white;
+    padding: 10px;
+    color: #030303;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 550;
+    border-radius: 45%;
+}
+
+.footer a:hover {
+    background-color: #eeedeb;
+}
+
+
