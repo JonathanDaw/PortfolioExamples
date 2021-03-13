@@ -1,0 +1,129 @@
+1. SQL> SELECT ename, hiredate
+	  2  FROM emp
+	  3  WHERE deptno =
+	  4  (SELECT deptno
+	  5  FROM emp
+	  6  WHERE ename='BLAKE')
+	  7  AND ename <>'BLAKE';
+
+	ENAME      HIREDATE
+	---------- ---------
+	MARTIN     28-SEP-81
+	ALLEN      20-FEB-81
+	TURNER     08-SEP-81
+	JAMES      03-DEC-81
+	WARD       22-FEB-81
+
+
+
+2. SQL> SELECT empno, ename
+	  2  FROM emp
+	  3  WHERE sal >
+	  4  (SELECT avg(sal)
+	  5  FROM emp)
+	  6  ORDER BY sal DESC;
+
+		 EMPNO ENAME
+	---------- ----------
+		  7839 KING
+		  7788 SCOTT
+		  7902 FORD
+		  7566 JONES
+		  7698 BLAKE
+		  7782 CLARK
+
+	6 rows selected.
+
+
+
+3. SQL> SELECT empno, ename
+	  2  FROM emp
+	  3  WHERE deptno IN
+	  4  (SELECT deptno
+	  5  FROM emp
+	  6  WHERE ename LIKE '%T%');
+
+		 EMPNO ENAME
+	---------- ----------
+		  7698 BLAKE
+		  7654 MARTIN
+		  7499 ALLEN
+		  7844 TURNER
+		  7900 JAMES
+		  7521 WARD
+		  7566 JONES
+		  7902 FORD
+		  7369 SMITH
+		  7788 SCOTT
+		  7876 ADAMS
+
+	11 rows selected.
+
+
+
+4. SQL> SELECT ename, empno, job
+	  2  FROM emp
+	  3  WHERE deptno =
+	  4  (SELECT deptno
+	  5  FROM dept
+	  6  WHERE loc = 'DALLAS');
+
+	ENAME           EMPNO JOB
+	---------- ---------- ---------
+	JONES            7566 MANAGER
+	FORD             7902 ANALYST
+	SMITH            7369 CLERK
+	SCOTT            7788 ANALYST
+	ADAMS            7876 CLERK
+
+
+
+5. SQL> SELECT ename, sal
+	  2  FROM emp
+	  3  WHERE mgr =
+	  4  (SELECT empno
+	  5  FROM emp
+	  6  WHERE ename = 'KING');
+
+	ENAME             SAL
+	---------- ----------
+	BLAKE            2850
+	CLARK            2450
+	JONES            2975
+	
+
+
+6. SQL> SELECT deptno, ename, job
+	  2  FROM emp
+	  3  WHERE deptno =
+	  4  (SELECT deptno
+	  5  FROM dept
+	  6  WHERE dname = 'SALES');
+
+		DEPTNO ENAME      JOB
+	---------- ---------- ---------
+			30 BLAKE      MANAGER
+			30 MARTIN     SALESMAN
+			30 ALLEN      SALESMAN
+			30 TURNER     SALESMAN
+			30 JAMES      CLERK
+			30 WARD       SALESMAN
+
+
+
+7. SQL> SELECT empno, ename, sal
+	  2  FROM emp
+	  3  WHERE sal >
+	  4  (SELECT avg(sal)
+	  5  FROM emp)
+	  6  AND deptno IN
+	  7  (SELECT deptno
+	  8  FROM emp
+	  9  WHERE ename LIKE '%T%');
+
+		 EMPNO ENAME             SAL
+	---------- ---------- ----------
+		  7698 BLAKE            2850
+		  7566 JONES            2975
+		  7902 FORD             3000
+		  7788 SCOTT            3000
